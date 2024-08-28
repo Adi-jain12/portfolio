@@ -8,7 +8,7 @@ const moonDance = Moon_Dance({
 });
 
 export const metadata = {
-	title: 'Home',
+	title: 'home',
 };
 
 const page = () => {
@@ -17,7 +17,7 @@ const page = () => {
 			<div className="slide-in-down mb-16">
 				<p className="font-bold text-[40px] w-full">
 					Hey there,&nbsp;
-					<span className={`${moonDance.className} text-[90px]`}>
+					<span className={`${moonDance.className} text-[60px]`}>
 						I&apos;m aditya!
 					</span>
 				</p>
@@ -35,6 +35,7 @@ const page = () => {
 					width="650"
 					quality={100}
 					alt="The Wild Oasis logo"
+					className="slide-in-right"
 				/>
 			</div>
 		</div>

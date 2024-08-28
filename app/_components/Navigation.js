@@ -1,14 +1,10 @@
 'use client';
 
 import Link from 'next/link';
-import { useState } from 'react';
+import { usePathname } from 'next/navigation';
 
 const Navigation = () => {
-	const [isActive, setIsActive] = useState('');
-
-	const handleClick = (linkName) => {
-		setIsActive(linkName);
-	};
+	const pathname = usePathname();
 
 	return (
 		<nav className="text-xl">
@@ -17,9 +13,10 @@ const Navigation = () => {
 					<Link
 						href="/projects"
 						className={`text-lg font-medium transition-all duration-400 ${
-							isActive === 'projects' ? 'text-black underline' : 'text-gray-500'
+							pathname === '/projects'
+								? 'text-black underline'
+								: 'text-gray-500'
 						} hover:underline underline-offset-[1px] px-3`}
-						onClick={() => handleClick('projects')}
 					>
 						Projects
 					</Link>
@@ -28,9 +25,8 @@ const Navigation = () => {
 					<Link
 						href="/about"
 						className={`text-lg font-medium transition-all duration-400 ${
-							isActive === 'about' ? 'text-black underline' : 'text-gray-500'
+							pathname === '/about' ? 'text-black underline' : 'text-gray-500'
 						} hover:underline underline-offset-[1px] px-3`}
-						onClick={() => handleClick('about')}
 					>
 						About
 					</Link>
